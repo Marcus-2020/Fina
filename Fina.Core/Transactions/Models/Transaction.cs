@@ -1,3 +1,4 @@
+using Fina.Core.Accounts.Models;
 using Fina.Core.Categories.Models;
 using Fina.Core.Common.Enums;
 
@@ -13,9 +14,10 @@ public class Transaction
     
     public TransactionTypeEnum Type { get; set; } = TransactionTypeEnum.Withdrawal;
     public decimal Amount { get; set; }
+    public decimal PaidAmount { get; set; }
     
     public long CategoryId { get; set; }
     public Category Category { get; set; } = null!;
     
-    public string UserId { get; set; } = string.Empty;   
+    public string UserId { get; set; } = string.Empty;
 }

@@ -17,8 +17,11 @@ public class UpdateTransactionRequest : Request
     public long CategoryId { get; set; }
     
     [Required(ErrorMessage = "O valor é obrigatório")]
+    [Range(0.01, double.MaxValue, ErrorMessage = "O valor deve ser maior que zero")]
     public decimal Amount { get; set; }
     
     [Required(ErrorMessage = "O tipo é obrigatório")]
     public TransactionTypeEnum Type { get; set; }
+    
+    public DateTime? PaidOrReceivedAt { get; set; }
 }
