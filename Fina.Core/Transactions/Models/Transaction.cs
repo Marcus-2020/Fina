@@ -1,4 +1,3 @@
-using Fina.Core.Accounts.Models;
 using Fina.Core.Categories.Models;
 using Fina.Core.Common.Enums;
 
