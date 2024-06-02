@@ -18,4 +18,6 @@ public class CreateTransactionRequest : Request
     
     [Required(ErrorMessage = "O tipo é obrigatório")]
     public TransactionTypeEnum Type { get; set; }
+    
+    public DateTime? PaidOrReceivedAt { get; set; }
 }

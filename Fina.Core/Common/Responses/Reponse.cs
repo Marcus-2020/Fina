@@ -17,6 +17,8 @@ public class Response<TData>
         _code = code;
         Message = message;
     }
+
+    public int StausCode => _code;
     
     public TData? Data { get; private set; }
     public string? Message { get; private set; }

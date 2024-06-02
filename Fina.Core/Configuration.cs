@@ -6,4 +6,7 @@ public static class Configuration
     public const int DefaultPageNumber = 1;
     
     public const int DefaultStatusCode = 200;
+    
+    public static string BackendUrl = String.Empty;
+    public static string FrontendUrl = String.Empty;
 }
