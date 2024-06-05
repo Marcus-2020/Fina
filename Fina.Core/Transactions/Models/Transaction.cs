@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Fina.Core.Categories.Models;
 using Fina.Core.Common.Enums;
 

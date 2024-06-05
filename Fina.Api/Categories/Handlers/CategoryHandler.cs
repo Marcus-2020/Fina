@@ -154,7 +154,7 @@ public class CategoryHandler : ICategoryHandler
         }
     }
 
-    public async Task<PagedResponse<List<Category>>> GetAllAsync(GetAllCategoriesRequest request)
+    public async Task<PagedResponse<List<Category>?>> GetAllAsync(GetAllCategoriesRequest request)
     {
         try
         {
@@ -172,7 +172,7 @@ public class CategoryHandler : ICategoryHandler
                 .Take(request.PageSize)
                 .ToListAsync();
 
-            PagedResponse<List<Category>> response = new(categories, 
+            PagedResponse<List<Category>?> response = new(categories, 
                 totalCount,
                 request.PageNumber,
                 request.PageSize,
@@ -183,7 +183,7 @@ public class CategoryHandler : ICategoryHandler
         catch (Exception ex)
         {
             _logger.Error(ex, "Ocorreu um erro ao tentar recuperar as categorias");
-            return new PagedResponse<List<Category>>(new(), 
+            return new PagedResponse<List<Category>?>(new(), 
                 StatusCodes.Status500InternalServerError,
                 "Ocorreu um erro ao tentar recuperar as categorias");
         }

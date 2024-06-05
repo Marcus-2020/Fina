@@ -39,7 +39,7 @@ public class GetAllTransactionByPeriodEndpoint : IEndpoint
         
         if (response.IsSuccess) return TypedResults.Ok(response);
         
-        return response.StausCode switch
+        return response.StatusCode switch
         {
             StatusCodes.Status404NotFound => TypedResults.NotFound(response),
             StatusCodes.Status500InternalServerError => TypedResults.StatusCode(500),

@@ -31,11 +31,11 @@ public class GetAllCategoriesEndpoint : IEndpoint
             UserId = ApiConfiguration.UserId
         };
         
-        PagedResponse<List<Category>> response =  await handler.GetAllAsync(request);
+        PagedResponse<List<Category>?> response =  await handler.GetAllAsync(request);
 
         if (response.IsSuccess) return TypedResults.Ok(response);
         
-        return response.StausCode switch
+        return response.StatusCode switch
         {
             StatusCodes.Status404NotFound => TypedResults.NotFound(response),
             StatusCodes.Status500InternalServerError => TypedResults.StatusCode(500),
